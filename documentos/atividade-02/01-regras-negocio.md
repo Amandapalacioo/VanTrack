@@ -489,7 +489,7 @@ Uma van não poderá possuir mais de um motorista ativo simultaneamente.
 A troca de motorista é permitida desde que o vínculo anterior seja encerrado antes da ativação do novo motorista.
 
 **Dados envolvidos:**  
-Van, motorista e vínculo de operação.
+Van, motorista e período do vínculo (início e fim).
 
 **Prioridade:**  
 Média
@@ -498,7 +498,159 @@ Média
 Proposto
 
 **Requisitos relacionados:**  
-RF-002, RF-007, RF-012
+RF-002, RF-007, RF-012, RF-014
 
 **Observações:**  
+Nenhuma.
+
+## RN-013 — Restrição de Acesso ao Chat por Vínculo
+
+**Título:**
+Chat restrito por vínculo motorista–responsável.
+
+**Descrição:**
+A comunicação via chat deve ocorrer apenas entre o motorista e os responsáveis/alunos vinculados à mesma van.
+
+**Origem:**
+Necessidade de centralizar a comunicação entre motoristas e responsáveis, preservando privacidade entre famílias.
+
+**Stakeholders envolvidos:**
+Motorista, responsável e aluno.
+
+**Condição:**
+Aplicada sempre que uma conversa for iniciada ou uma mensagem enviada.
+
+**Regra:**
+O sistema não deve permitir que um responsável visualize ou envie mensagens em conversas de vans às quais seu(s) aluno(s) não estejam vinculados, nem visualizar o chat de outro responsável.
+
+**Exceções:**
+Avisos de atraso em massa são transmissões do motorista para todos os responsáveis da van, não configurando conversa privada entre responsáveis entre si.
+
+**Dados envolvidos:**
+Van, motorista, responsável, vínculo aluno–van, mensagens.
+
+**Prioridade:**
+Alta
+
+**Status:**
+Proposto
+
+**Requisitos relacionados:**
+RF-013
+
+**Observações:**
+Nenhuma.
+
+## RN-014 — Comunicação de Atraso a Todos os Responsáveis da Van
+
+**Título:**
+Aviso de atraso geral.
+
+**Descrição:**
+Qualquer atraso relevante identificado pelo motorista, ou detectado automaticamente pelo sistema, deve ser comunicado a todos os responsáveis vinculados à van afetada.
+
+**Origem:**
+Enquadramento do Problema — imprevistos não comunicados com agilidade.
+
+**Stakeholders envolvidos:**
+Motorista, responsável, aluno e empresa de transporte.
+
+**Condição:**
+Quando o motorista aciona manualmente o aviso de atraso, ou quando o sistema detecta desvio significativo entre o horário previsto e o real.
+
+**Regra:**
+O sistema deve notificar simultaneamente todos os responsáveis com alunos ativos na rota da van afetada, informando o motivo (quando informado) e a nova previsão de chegada.
+
+**Exceções:**
+Atrasos inferiores a um limiar mínimo configurado (ex.: X minutos) não geram notificação, para evitar excesso de alertas.
+
+**Dados envolvidos:**
+Van, rota, motivo do atraso, nova previsão, lista de responsáveis afetados, limiar mínimo configurado.
+
+**Prioridade:**
+Alta
+
+**Status:**
+Proposto
+
+**Requisitos relacionados:**
+RF-012, RF-015
+
+**Observações:**
+Nenhuma.
+
+## RN-015 — Operação Dependente de Conectividade
+
+**Título:**
+Dependência de conectividade para funcionalidades em tempo real.
+
+**Descrição:**
+As funcionalidades de tempo real do sistema dependem de conexão com a internet.
+
+**Origem:**
+Restrições do projeto (conectividade requerida para tempo real; modo offline completo está fora do escopo).
+
+**Stakeholders envolvidos:**
+Motorista, responsável, aluno e empresa de transporte.
+
+**Condição:**
+Aplicada a toda funcionalidade que dependa de dados em tempo real.
+
+**Regra:**
+Quando não houver conectividade, o sistema deve informar clara e imediatamente ao usuário que os dados exibidos podem estar desatualizados ou indisponíveis, nunca apresentando uma localização desatualizada como se fosse atual.
+
+**Exceções:**
+Check-ins podem ser registrados localmente no dispositivo do motorista e sincronizados na reconexão, sem caracterizar modo offline completo.
+
+**Dados envolvidos:**
+Status de conectividade, timestamp da última atualização de localização.
+
+**Prioridade:**
+Média
+
+**Status:**
+Proposto
+
+**Requisitos relacionados:**
+RF-002, RF-003, RF-009, RF-010, RF-012, RF-013
+
+**Observações:**
+Nenhuma.
+
+## RN-016 — Autorização para Dados de Menores
+
+**Título:**
+Autorização do responsável legal para dados de alunos menores.
+
+**Descrição:**
+O tratamento de dados pessoais de alunos menores de idade requer autorização formal do responsável legal.
+
+**Origem:**
+Restrições do projeto — LGPD (dados de menores com autorização).
+
+**Stakeholders envolvidos:**
+Responsável legal, aluno e empresa de transporte.
+
+**Condição:**
+No cadastro do aluno e antes de qualquer coleta de dado pessoal ou de localização referente ao menor.
+
+**Regra:**
+O cadastro de um aluno identificado como menor de idade somente pode ser concluído e ativado no sistema após o registro da autorização do responsável legal.
+
+**Exceções:**
+Alunos maiores de idade dependem apenas do próprio consentimento, não desta autorização.
+
+**Dados envolvidos:**
+Aluno, indicador de menoridade, responsável legal, registro de autorização.
+
+**Prioridade:**
+Crítica
+
+**Status:**
+Proposto
+
+**Requisitos relacionados:**
+RF-016
+
+**Observações:**
 Nenhuma.
