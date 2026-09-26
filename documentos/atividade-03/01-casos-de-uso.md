@@ -74,7 +74,7 @@ O diagrama mostra a visão de sistema (UC-S, UC-C, UC-I, UC-X e UC-ADM).
 Os casos de uso de negócio, essenciais e reais são outras visões dos mesmos
 objetivos e por isso não aparecem como elementos separados no diagrama.
 
-![Diagrama de casos de uso do VanTrack](diagrama-casos-de-uso.svg)
+![Diagrama de casos de uso do VanTrack](diagrama-casos-de-uso.png)
 
 **Justificativa dos relacionamentos**
 
