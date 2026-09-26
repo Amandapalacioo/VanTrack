@@ -15,11 +15,11 @@ controle de presença e roteirização dinâmica.
 
 ## Documentação
 
-### Atividade 01
+### Atividade 01 — Mapas de modelagem
 
-- [Mapa de usuários e objetivos](documentos/atividade-01/mapa%20de%20usuários.png)
-- [Mapa de fluxos](documentos/atividade-01/mapa%20de%20fluxos.png)
-- [Modelo de dados](documentos/atividade-01/mapa%20de%20dados.png)
+- [Mapa de usuários e objetivos](documentos/atividade-01/01-mapa-usuarios.md)
+- [Mapa de fluxos](documentos/atividade-01/02-mapa-fluxos.md)
+- [Mapa de dados](documentos/atividade-01/03-mapa-dados.md)
 
 ### Atividade 02 — Regras e Requisitos
 
@@ -27,3 +27,8 @@ controle de presença e roteirização dinâmica.
 - [Requisitos Funcionais](documentos/atividade-02/02-requisitos-funcionais.md)
 - [Requisitos Não Funcionais](documentos/atividade-02/03-requisitos-nao-funcionais.md)
 - [Rastreabilidade](documentos/atividade-02/04-rastreabilidade.md)
+
+### Atividade 03 — Casos de Uso
+
+- [Documento de casos de uso](documentos/atividade-03/01-casos-de-uso.md)
+- [Diagrama de casos de uso](documentos/atividade-03/diagrama-casos-de-uso.png)
